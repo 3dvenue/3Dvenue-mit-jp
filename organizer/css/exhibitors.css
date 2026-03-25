@@ -1,0 +1,142 @@
+/*
+* 3Dvenue - Experiential Space Engine
+* Copyright (c) 2026 yoshihiro
+* This software is released under the MIT License.
+* https://opensource.org/licenses/MIT
+* "Transforming information from browsing to residing."
+*/
+
+main h2{
+	color:#3E5D96;
+	margin-bottom:20px;
+}
+
+main #companies h3{
+	border-bottom:3px solid #3E5D96;
+	max-width:280px;
+}
+
+main #companies .cardbox{
+	display: flex;
+	gap:20px;
+	margin-bottom:40px;
+}
+
+main .companycard{
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	padding:20px 20px 10px;
+	width:calc(25% - 20PX);
+	box-shadow: 0 0 10px #0001;
+	cursor: pointer;
+	transition-duration: .5s;
+}
+
+main .companycard:hover{
+	box-shadow: 1px 1px 2px #0005;
+	transform: translateY(-1px);
+}
+
+main .companycard .title{
+	font-size:14px;
+}
+
+main .companycard .address{
+	font-size:12px;
+	margin-bottom:10px;
+}
+
+main div.web{
+	display: flex;
+	justify-content: space-between;
+	text-align: center;
+}
+
+main div.web span{
+	font-size:12px;
+}
+
+main #memo{
+	text-align: right;
+	font-size:14px;
+}
+
+.cardbox table{
+	width:100%;
+	border-collapse: collapse;
+}
+
+.cardbox table th{
+	background:#ccc;
+	padding:0 10px;
+	font-size:12px;
+}
+
+.cardbox table td{
+	padding:0 10px;
+	font-size:12px;
+}
+
+.cardbox table .company{
+	width:150px;
+}
+
+.cardbox table .address{
+	width:200px;
+}
+
+.cardbox table .web{
+	width:50px;
+	text-align: center;
+}
+
+.cardbox table .access,
+.cardbox table .click{
+	width:80px;
+	text-align: right;
+}
+
+
+#web{
+	position: fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100vh;
+	background: #0006;
+	z-index: 100;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transform: scale(0.0);
+	transition-duration: .5s;
+}
+
+#web.active{
+	transform: scale(1.0);
+}
+
+#web .close{
+	position:absolute;
+	top:0;
+	right:20px;
+	display: flex;
+	background:#000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color:#FFF;
+	cursor: pointer;
+	width:40px;
+	height:40px;
+	font-weight: 700;
+	font-size:24px;
+}
+
+#web iframe{
+	background:#FFF;
+	border:none;
+	box-shadow: 3px 3px 10px #0006;
+	width:calc(100% - 40px);
+	height:calc(100vh - 40px);
+}

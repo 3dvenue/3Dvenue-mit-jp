@@ -1,0 +1,61 @@
+/*
+* 3Dvenue - Experiential Space Engine
+* Copyright (c) 2026 yoshihiro
+* This software is released under the MIT License.
+* https://opensource.org/licenses/MIT
+* "Transforming information from browsing to residing."
+*/
+
+main .inner{
+	max-width:680px;
+}
+
+
+main .inner h1{
+	padding:0;
+	margin:0 0 20px;
+	height:60px;
+}
+
+main{
+	padding:20px;
+	min-height:100vh;
+}
+
+/*main h3{
+    background: linear-gradient(90deg, #00E5FF, #7C4DFF);
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+*/
+/*main h3 {
+    color: #00E5FF;
+    font-weight: 600;
+    padding-bottom: 6px;
+    border-bottom: 2px solid rgba(0, 229, 255, 0.6);
+    letter-spacing: 0.5px;
+}
+*/
+main h3 {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(12px);
+    padding: 12px 18px;
+    border-radius: 12px;
+    color: #4A90E2;
+    font-weight: 600;
+}
+
+
+
+main canvas{
+	height:200px;
+	margin-bottom:80px;
+	border: 1px solid #ccc;
+}
+
+.kei{
+	text-align: right;
+}

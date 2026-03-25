@@ -1,0 +1,87 @@
+
+/*
+* 3Dvenue - Experiential Space Engine
+* Copyright (c) 2026 yoshihiro
+* This software is released under the MIT License.
+* https://opensource.org/licenses/MIT
+* "Transforming information from browsing to residing."
+*/
+
+#histories{
+	display: flex;
+	gap:20px;
+}
+
+#histories figure{
+	width:calc(100% / 3 - 20px);
+	cursor: pointer;
+}
+
+#histories figure:hover img{
+	outline: 2px solid #000;
+	outline-offset: 2px;
+	transition-duration: 0s;
+}
+
+#histories figure img{
+	width:100%;
+	height:auto;
+}
+
+
+#histories figure figcaption{
+	margin-top:5px;
+	text-align: right;
+	font-size:14px;
+}
+
+
+/* 結果表示
+---------------------------------*/
+
+#analyze{
+	position: fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100vh;
+	background:#0003;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transform: scale(0.0);
+	background: rgba(255,255,255,0.15);
+	backdrop-filter: blur(12px);
+	border-radius: 12px;
+	border: 1px solid rgba(255,255,255,0.3);
+
+}
+
+#analyze #close{
+	position: absolute;
+	top:10px;
+	right:10px;
+	background:#000;
+	color:#FFF;
+	font-size: 20px;
+	font-weight:700;
+	display: flex;
+	width:30px;
+	height:30px;
+	line-height: 1.0;
+	cursor: pointer;
+	justify-content: center;
+	align-items: center;
+	z-index: 100;
+}
+
+#analyze.active{
+	transform: scale(1.0);
+}
+
+#analyze iframe{
+	width:calc(100% - 40px);
+	height:calc(100% - 40px);
+	max-width:980px;
+	background:#FFF;
+}

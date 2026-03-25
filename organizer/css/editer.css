@@ -1,0 +1,291 @@
+/*
+* 3Dvenue - Experiential Space Engine
+* Copyright (c) 2026 yoshihiro
+* This software is released under the MIT License.
+* https://opensource.org/licenses/MIT
+* "Transforming information from browsing to residing."
+*/
+
+body{
+    transition-duration: .5s;
+}
+
+h1:hover,
+h2:hover{
+	cursor: pointer;
+	outline:1px solid #FFF;
+}
+
+
+.organizers:hover,
+.period:hover{	
+	cursor: pointer;
+	outline:1px solid #FFF;
+}
+
+
+#about .about:hover{
+	cursor: pointer;
+	outline:1px solid #000;
+}
+
+#venue .category:hover,
+#venue .benefit:hover{
+	cursor: pointer;
+	outline:1px solid #000;
+}
+
+header{
+	cursor: pointer;
+}
+
+/* editor
+----------------------------------*/
+#editor{
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100vh;
+	background:#0000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index:100;
+	padding:20px;
+	pointer-events: none;
+	transition-duration: .5s;
+}
+
+#editor #form{
+	padding:50px 20px 20px;
+	background:#FFF;
+	position: relative;
+	pointer-events: auto;
+	box-shadow: 0 0 10px #0001;
+	transform: scale(0.0);
+	transition-duration: .5s;
+	width:100%;
+	max-width:680px;
+}
+
+
+#editor.active{
+	background:#0008;	
+	pointer-events:auto;
+}
+
+#editor.active #form{
+	transform: scale(1.0);	
+}
+
+#editor #form h3{
+	/*background:#333;*/
+	background:#3d5d99;
+	color:#FFF;
+	position: absolute;
+	top:0;
+	left:0;
+	width:calc(100% - 30px);
+	font-size:18px;
+	height:40px;
+	display: flex;
+	align-items: center;
+	padding-left:20px;
+}
+
+#editor #form .close{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width:40px;
+	height:40px;
+	background:#333;
+	color:#FFF;
+	font-weight:780;
+	position: absolute;
+	top:0px;
+	right:0px;
+	padding:0;
+	margin:0;
+	cursor: pointer;
+}
+
+#editor #form input[type="text"],
+#editor #form textarea{
+	padding:10px;
+	border:1px solid #ccc;
+	border-radius:7px;
+	width:100%;
+}
+
+#editor #form textarea{
+	height:calc(1em * 7 * 1.75);
+}
+
+#editor #form .box,
+#editor #form #dates{
+	padding:10px 0 16px;
+}
+
+#editor #form #dates{
+	gap:20px;
+}
+
+#editor #form div{
+	display: none;
+}
+
+#editor #form.category #category,
+#editor #form.description .longlist,
+#editor #form.benefit .longlist,
+#editor #form.name .text,
+#editor #form.subtitle .text,
+#editor #form.organizers .text{
+	display: block;
+}
+
+#editor #form.category #category{
+	margin-bottom:10px;
+}
+
+#editor #form.category form > button{
+	display:none;
+}
+
+#editor #form div#category_btn{
+	padding-top:10px;
+	display:flex;
+	justify-content: right;
+	gap:20px;
+}
+
+#editor #form div#category_btn button{
+	display: none;
+	margin:0;
+}
+
+#editor #form div#category_btn.edit .edit,
+#editor #form div#category_btn.edit .dell{
+	display:block;
+}
+
+#editor #form div#category_btn.new .save{
+	display:block;
+}
+
+/*#editor #form div#category_btn.c0 .dell{
+	display:block;
+}
+*/
+
+#editor #form.period #dates{
+	display: flex;	
+}
+
+#photoUpload{
+	display: none;
+}
+
+#editor #form.photoUpload #textedit{
+	display: none;
+}
+
+#editor #form.photoUpload #photoUpload{
+	display: block;
+}
+
+#editor #form button{
+	padding:7px 20px;
+	background:#FFF;
+	border:none;
+	border-radius:5px;
+	margin:0 0 0 auto;
+	display: flex;
+	cursor: pointer;
+	background: #3d5d99;
+	color:#FFF;
+	font-weight: 700;
+}
+
+
+#colorbar{
+	position:fixed;
+	top:-150px;
+	left:0;
+	background:#333;
+	width:100%;
+	padding:30px 0 0;
+	color:#FFF;
+	height:150px;
+	z-index:100;
+	transition-duration: .5s;
+}
+
+
+body.colorbar{
+	padding-top:150px;
+}
+
+#colorbar.active{
+	top:0;
+}
+
+#colorbar .close{
+	position:absolute;
+	top:10px;
+	right:10px;
+	width:30px;
+	height:30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background:#FFF;
+	color:#000;
+	font-weight:700;
+	cursor: pointer;
+}
+
+#colorbar form{
+	height:100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap:40px;
+}
+
+
+#colorbar form label{
+	margin-bottom:10px;
+	display: flex;
+	justify-content:space-between;
+	gap:10px;
+	font-size:12px;
+}
+
+/*#editor #form.period .box{
+	display: none;
+}
+*/
+dl{
+	display: flex;
+	flex-wrap: wrap;
+	gap:0 15px;
+	margin-bottom:10px;
+}
+
+dl dt{
+	display:block;
+	width:100%;
+	font-weight: 700;
+}
+
+dl dd input{
+	margin-right:5px;
+}
+
+dl dd label{
+	white-space: nowrap;
+	font-size:14px;
+	cursor: pointer;
+}

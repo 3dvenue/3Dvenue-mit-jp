@@ -1,0 +1,179 @@
+/*
+* 3Dvenue - Experiential Space Engine
+* Copyright (c) 2026 yoshihiro
+* This software is released under the MIT License.
+* https://opensource.org/licenses/MIT
+* "Transforming information from browsing to residing."
+*/
+
+main .inner{
+	position:relative;
+}
+
+main .inner #addNew{
+	position:absolute;
+	top:0;
+	right:20px;
+	background:#333;
+	color:#FFF;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size:20px;
+	font-weight: 700;
+	color:#FFF;
+	cursor: pointer;
+	width:30px;
+	height:30px;
+	padding:0;
+	margin:0;
+	line-height: 1.0;
+	border-radius: 5px;
+}
+
+main .inner h1{
+	margin-bottom:20px;
+	line-height:1.0;
+}
+
+main #expo{
+	background:none;
+}
+
+main #expo .expo{
+	background:#FFF;
+	position:relative;
+	padding:50px 20px 5px;
+	border-radius: 10px;
+	box-shadow: 0 0 10px #0001;
+	max-width:880px;
+	margin:0 auto 40px;
+}
+
+main #expo .expo .expomemo{
+	display: flex;
+	gap:20px;
+	padding:10px 0;
+}
+
+main #expo .expo .expomemo figure{
+	display:block;
+	width:150px;
+}
+
+main #expo .expo .expomemo figure img{
+	width:100%;
+}
+
+main #expo .expo label{
+	pointer-events: auto;
+	font-size:14px;
+	font-weight: 500;
+}
+
+main #expo .expo label.NG{
+	opacity:0.5;
+	pointer-events: none;
+}
+
+main #expo .expo .expomemo .right{
+	display:block;
+	width:calc(100% - 170px);
+}
+
+main #expo h2{
+	margin-bottom:40px;
+	text-align: center;	
+}
+
+main #expo .expo h3{
+	position:absolute;
+	top:0;
+	left:0;
+
+	margin-bottom: 0;
+	background:#3E5D96;
+	color:#FFF;
+	width:100%;
+	padding:5px 20px;
+	border-radius: 10px 10px 0 0;
+}
+
+main .expo .duration{
+	padding-top:5px;
+	display: flex;
+	justify-content: right;
+	gap:5px;
+	font-size:14px;
+}
+
+main .expo .duration p{
+	font-weight:500;
+}
+
+main #expo .expo .expoEdit{
+	position: absolute;
+	top:10px;
+	right:10px;
+	color:#3E5D96;
+	background:#FFF;
+	font-size:12px;
+	padding:0 10px;
+	border-radius:5px;
+	transition-duration: .5s;
+	z-index:10;
+	font-weight:700;
+}
+
+main #expo .expo .expoEdit:hover{
+	background:#0005;
+	color:#FFF;
+}
+
+main #expo .expo .public{
+	display: flex;
+	justify-content: space-between;
+}
+
+main #expo .expo .public label{
+	display: flex;
+	justify-content: left;
+	gap:5px;
+}
+
+main #expo .expo .public label input{
+	display: none;
+}
+
+main #expo .expo .public label .CheckBox{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width:20px;
+	height:20px;
+	border:1px solid #666;
+	border-radius: 3px;
+}
+
+main #expo .expo .public label input:checked + .CheckBox:after{
+	content: "\2714";
+	color:#393;
+	font-size:20px;
+	font-weight:bold;
+}
+
+
+main #expo .expo .public .exhibitors{
+	font-size:12px;
+	border-radius: 3px;
+	padding:6px 10px;
+	background:#3E5D96;
+	color:#FFF;
+	line-height:1.0;
+	cursor: pointer;
+}
+
+#organizer{
+	font-size:20px;
+}
+

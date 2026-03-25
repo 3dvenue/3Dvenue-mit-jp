@@ -1,0 +1,86 @@
+
+/*
+* 3Dvenue - Experiential Space Engine
+* Copyright (c) 2026 yoshihiro
+* This software is released under the MIT License.
+* https://opensource.org/licenses/MIT
+* "Transforming information from browsing to residing."
+*/
+
+h1{
+	text-align: center;
+	margin-bottom:50px;
+	font-size: 24px;
+	color:#3d5d99;
+}
+
+section{
+	max-width:400px;
+	margin:0 auto;
+	box-shadow: 0 0 10px #0001;
+}
+
+
+section h2{
+	text-align: center;
+	margin-bottom:20px;
+	font-size:20px;
+}
+
+#login form{
+	display: flex;
+	justify-content: left;
+	align-items: left;
+	flex-direction: column;
+	gap:20px;
+}
+
+#login form input{
+	padding:0 10px;
+	height:35px;
+	border-radius: 5px;
+	border:1px solid #999;
+}
+
+#login form #button{
+	display: flex;
+	justify-content: center;
+}
+
+#login form button{
+	background:#FFF;
+	padding:10px 20px;
+	border-radius: 5px;
+	font-weight:700;
+	background:#3d5d99;
+	color:#FFF;
+}
+
+#login label{
+	position: relative;
+}
+
+#login .eyeball{
+	position: absolute;
+	top:1px;
+	right:-10px;
+	width:33px;
+	height:33px;
+	background:#FFF;
+	border-radius: 0 7px 5px 0;
+	padding:5px 0 0 5px;
+	cursor: pointer;
+	background-image:url(../../img/eye.svg);
+	background-position: center;
+	background-size: 70%;
+	background-repeat: no-repeat;
+}
+
+#login .eyeball.close{
+	background-image:url(../../img/eye-closed.svg);	
+}
+
+main{
+	height:calc(100vh - 150px);
+}
+
