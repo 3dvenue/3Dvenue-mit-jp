@@ -267,5 +267,5 @@ $password = "Password";
 
 * [Database Schema](./Database%20Schema.md) - DB構造・テーブル定義
 * [Project Structure](./Project%20Structure.md) - ディレクトリ構成・ファイル役割
-* [Developer Profile](https://3dvenue.github.io/3Dvenue/profile/index.html) - 開発者プロフィール
+* [Developer Profile](https://3dvenue.github.io/3Dvenue/profile/index-jp.html) - 開発者プロフィール
 
