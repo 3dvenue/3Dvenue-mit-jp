@@ -1,0 +1,119 @@
+/*
+* 3Dvenue - Experiential Space Engine
+* Copyright (c) 2026 yoshihiro
+* This software is released under the MIT License.
+* https://opensource.org/licenses/MIT
+* "Transforming information from browsing to residing."
+*/
+
+#organizer{
+	font-size:20px;
+}
+
+#expobox{
+	display: flex;
+	gap:30px;
+	flex-wrap: wrap;
+}
+
+.expo{
+	position:relative;
+	width:calc(100% / 3 - 20px);
+	padding:20px;
+	border:1px solid #ccc;
+	border-radius: 10px;
+}
+
+.expo .company{
+	position:absolute;
+	top:1px;
+	right:1px;
+	background:#3E5C96;
+	color:#FFF;
+	padding:3px 15px;
+	font-size:12px;
+	border:1px solid #FFF;
+	border-radius: 3px 10px 3px 10px;
+	box-shadow:1px 1px 2px #0003;
+	font-weight:700;
+	text-shadow: -1px -1px 2px #000;
+	cursor: pointer;
+}
+
+.expo .company:hover{
+	background:#1E3C76;
+}
+
+.expo figure{
+	width:100%;
+	padding:0;
+	margin:0;
+	cursor: pointer;
+}
+
+.expo figure:hover{
+	
+}
+
+.expo figcaption{
+	font-weight:500;
+	color:#000;
+	font-size:14px;
+	text-align: center;
+}
+
+.expo img{
+	width:100%;
+}
+
+.expo .schedule{
+	display:none;
+}
+
+.expo .exhibitorbtn{
+	padding-top:10px;
+	text-align: center;
+}
+
+/* frame
+------------------------------*/
+#frame{
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100vh;
+	padding:0;
+	margin:0;
+	background:#000;
+	transform: scale(0.0);
+	transition-duration: .3s;
+}
+
+#frame.active{
+	transform: scale(1.0);
+}
+
+#frame .close{
+	position:absolute;
+	top:0;
+	right:20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background:#FFF;
+	color:#000;
+	font-weight:700;
+	width:40px;
+	height:40px;
+	line-height: 1.0;
+	cursor: pointer;
+	border-radius: 0 0 5px 5px;
+}
+
+#frame iframe{
+	width:100%;
+	height:100%;
+	background:#FFF;
+	border:none;
+}

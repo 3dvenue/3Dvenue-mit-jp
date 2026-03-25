@@ -1,0 +1,268 @@
+/*
+* 3Dvenue - Experiential Space Engine
+* Copyright (c) 2026 yoshihiro
+* This software is released under the MIT License.
+* https://opensource.org/licenses/MIT
+* "Transforming information from browsing to residing."
+*/
+
+/* companies
+---------------------------------*/
+
+#companies{
+	position: relative;
+}
+
+#companies #add{
+	position: absolute;
+	justify-content: center;
+	align-items: center;
+	top:20px;
+	right:20px;
+	display: flex;
+	width:30px;
+	height:30px;
+	background:#000;
+	color:#FFF;
+	font-weight: 700;
+	line-height:1.0;
+	cursor: pointer;
+}
+
+#companies table{
+	width:100%;
+	border-collapse: collapse;
+}
+
+
+#companies table th,
+#companies table td{
+	padding:5px 10px;
+	border:none;
+	/*border-top:1px solid #ccc;*/
+	border-bottom:1px solid #ccc;
+	font-size:14px;
+}
+
+#companies table th{
+	background:#666;
+	color:#FFF;
+}
+
+/*#companies table tr:nth-child(odd){
+	background:#f0f0f0;	
+}
+*/
+#companies table tr:hover{
+	background:#ccc;
+	cursor: pointer;
+}
+
+
+#companies table td.set{
+	padding:0;
+	pointer-events: none;
+	background:#999;
+}
+
+
+#companies table td.set .setbox{
+	display: flex;
+	gap:3px;
+	padding:0 5px;
+}
+
+
+#companies table td.set span{
+	display: flex;
+	flex:1;
+	justify-content: center;
+	align-items: center;
+	padding:0 5px;
+	border:1px solid #ccc;
+	border-radius:3px;
+	background:#FFF;
+	pointer-events: auto;
+	font-size:12px;
+	transition-duration: 0.5s;
+	display: none;
+	color:#333;
+	font-weight:500;
+}
+
+#companies table td.set span:hover{
+	background:#333;
+	color:#FFF;
+}
+
+
+#companies table td.set .setbox.s0 span.yes,
+#companies table td.set .setbox.s0 span.ban{
+	display: flex;
+}
+
+#companies table td.set .setbox.s1 span.ban{
+	display: flex;
+}
+
+#companies table td.set .setbox.s1 span.ban{
+	display: flex;
+}
+
+#companies table td.set .setbox.s-1 span.off{
+	display: flex;
+}
+
+#companies table tr.s0{
+	background:#F003;
+}
+
+#companies table tr.s-1{
+	background:#999;
+	display:none;
+}
+
+#companies table tr.s-1 td{
+	color:#ccc;
+}
+
+#companies table.view tr.s-1{
+	display: table-row;	
+}
+
+/* view
+---------------------------------*/
+
+#view{
+	text-align: right;
+	margin-bottom:5px;
+}
+
+#view .view{
+	display:inline-block;
+	justify-content: center;
+	align-items: center;
+	padding:0 10px;
+	cursor: pointer;
+	border: 1px solid #ccc;
+	font-size:12px;
+	border-radius: 5px;
+}
+
+#view .view:hover{
+	background:#333;
+	color:#FFF;
+}
+
+/* companyedit
+---------------------------------*/
+#companyedit{
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	pointer-events: none;
+	background:#0000;
+}
+
+#companyedit.active{
+	pointer-events: auto;
+	background:#0009;
+}
+
+#companyedit #check{
+	background: #FFF;
+	width:100%;
+	max-width:680px;
+	padding:40px 40px 20px;
+	border-radius: 10px;
+	position:relative;
+	pointer-events: auto;
+	box-shadow: 0 0 10px #0003;
+	transform: scale(0.0);
+	transition-duration: .5s;
+}
+
+#companyedit.active #check{
+	transform: scale(1.0);
+}
+
+#companyedit #check .close{
+	position: absolute;
+	top:0px;
+	right:10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width:30px;
+	height:30px;
+	background:#000;
+	color:#FFF;
+	cursor: pointer;
+	font-weight:700;
+}
+
+#companyedit .btn{
+	font-size:14px;
+	display: inline-block;
+}
+
+
+/* frame
+------------------------------*/
+#frame{
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100vh;
+	padding:0;
+	margin:0;
+	background:#000;
+	transform: scale(0.0);
+	transition-duration: .3s;
+}
+
+#frame.active{
+	transform: scale(1.0);
+}
+
+#frame .close{
+	position:absolute;
+	top:0;
+	right:20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background:#FFF;
+	color:#000;
+	font-weight:700;
+	width:40px;
+	height:40px;
+	line-height: 1.0;
+	cursor: pointer;
+	border-radius: 0 0 5px 5px;
+}
+
+#frame #iframetitile{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width:100%;
+	height:50px;
+	color:#FFF;
+	z-index:1;
+	font-size:20px;
+	font-weight:700;
+}
+
+#frame iframe{
+	width:100%;
+	height:calc(100% - 50px);
+	background:#FFF;
+	border:none;
+}

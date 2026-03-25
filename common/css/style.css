@@ -1,0 +1,164 @@
+/*
+* 3Dvenue - Experiential Space Engine
+* Copyright (c) 2026 yoshihiro
+* This software is released under the MIT License.
+* https://opensource.org/licenses/MIT
+* "Transforming information from browsing to residing."
+*/
+
+html {
+    font-size: 16px;
+    height:100%;
+}
+
+body{
+	height:100%;
+}
+
+body * {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.75;
+}
+
+:lang(en) {
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2.0rem; }
+h3 { font-size: 1.5rem; }
+
+p { font-size: 1.0rem; } 
+
+*{
+	padding:0;
+	margin:0;
+	box-sizing: border-box;
+}
+
+.inner{
+	width:100%;
+	max-width:1040px;
+	padding:0 20px;
+	margin:0 auto;
+}
+
+/* header
+-------------------------------------------*/
+header{
+	line-height: 1.0;
+	padding:10px 0;
+	border-bottom:1px solid #666;
+	height:80px;
+}
+
+header .inner{
+	display: flex;
+	justify-content: space-between;
+}
+
+header #logo p{
+	margin:0;
+	display: none;
+}
+
+header #logo img{
+	width:60px;
+	height:auto;
+}
+
+/* nav
+-------------------------------------------*/
+
+nav{
+	width:calc(100% - 100px);
+	max-width:680px;
+}
+
+nav ul{
+	display: flex;
+	list-style: none;
+	justify-content:space-between;
+}
+
+
+nav ul li{
+	flex:auto;
+}
+
+nav ul li a{
+	display:flex;
+	height:50px;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+	color:#333;
+}
+
+
+/* main
+-------------------------------------------*/
+
+h1{
+	text-align: center;
+	padding:50px 0;
+}
+
+h1#head{
+	background:#00284a;
+	color:#FFF;
+}
+
+main {
+	min-height:calc(100% - 370px);
+	padding:50px 0;
+}
+
+main h2{
+	padding-bottom:20px;
+	color:#00284a;
+}
+
+main section h3{
+	width:100%;
+	margin-bottom:20px;
+}
+
+/* footer 
+-------------------------------------------*/
+
+footer{
+	height:120px;
+	padding:20px;
+	text-align: center;
+	background:#012848;
+	font-size:14px;
+	color:#666;
+}
+
+footer *{
+	color:#FFF;
+}
+
+footer #footerlink ul{
+	display: flex;
+	justify-content: center;
+	list-style:none;
+	gap:20px;
+	padding-bottom:20px;
+}
+
+footer #footerlink ul a{
+	text-decoration: none;
+	/*color:#FFF;*/
+	font-size:14px;
+}
+
+footer #footerlink ul a:hover{
+	/*color:#FFF;*/
+	font-weight:700;
+	text-shadow: 0 0 3px #FFF;
+}
+
+

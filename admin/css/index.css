@@ -1,0 +1,146 @@
+/*
+* 3Dvenue - Experiential Space Engine
+* Copyright (c) 2026 yoshihiro
+* This software is released under the MIT License.
+* https://opensource.org/licenses/MIT
+* "Transforming information from browsing to residing."
+*/
+
+section{
+  margin:20px 20px 50px;
+}
+
+h1{
+	text-align: center;
+}
+
+h2{
+	margin:0 0 10px;
+}
+
+#addNew{
+	text-align: right;
+}
+
+.infomation{
+	cursor: pointer;
+	padding:10px 20px;
+	border:1px solid #eee;
+	margin-bottom:10px;
+	border-radius: 10px;
+}
+
+.infomation h3{
+	font-size:16px;
+	padding:0;
+	margin:0;
+}
+
+.infomation div{
+	font-size:14px;
+}
+
+.infomation:hover{
+	background:#F0F0F0;
+}
+
+#form{
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/*background:#000c;*/
+	background:#0005;
+	transition-duration: .5s;
+	pointer-events: none;
+	background:#000c;
+	transform: scale(0.0);
+}
+
+#form.active{
+	transform: scale(1.0);
+}
+
+#form .close{
+	cursor: pointer;
+	position: absolute;
+	top:10px;
+	right:10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width:30px;
+	height:30px;
+	background:#FFF;
+	color:#000;
+	pointer-events: auto;
+}
+
+#form form{
+	padding:40px 40px 30px;
+	display: flex;
+	background:#FFF;
+	border:1px solid #ccc;
+	border-radius:10px;
+	box-shadow: 3px 3px 7px #0003;
+	flex-direction: column;
+	gap:10px;
+	width:680px;
+	pointer-events: auto;
+}
+
+#form label{
+	display: flex;
+	gap:20px;
+	width:100%;
+}
+
+#form label span{
+	display: block;
+	width:100px;
+}
+
+#form input[type="text"],
+#form textarea{
+	width:calc(100% - 120px);
+	padding:5px 10px;
+}
+
+#form input,#form textarea,#form select{
+		border-radius: 5px;
+		border:1px solid #999;
+	  padding:5px 10px;
+}
+
+#form #button{
+	padding-top:20px;
+	display: flex;
+	gap:20px;
+}
+
+#form.active{
+	pointer-events: auto;
+}
+
+#form.active #categoryedit{
+	transform: scale(1.0);
+}
+
+form > div{
+	padding-top:10px;
+	text-align: right;
+}
+
+#form button{
+	display: none;
+}
+
+#form.new .button-area button#btn_add,
+#form.edit .button-area button#btn_edit{
+	display:inline;
+}
+

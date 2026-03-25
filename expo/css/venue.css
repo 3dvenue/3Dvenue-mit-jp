@@ -1,0 +1,369 @@
+/*
+* 3Dvenue - Experiential Space Engine
+* Copyright (c) 2026 yoshihiro
+* This software is released under the MIT License.
+* https://opensource.org/licenses/MIT
+* "Transforming information from browsing to residing."
+*/
+
+:root{
+--bodybackground:linear-gradient(#7BB4EE,#0E3B5C);
+--headerbackground:#0008;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background:var(--bodybackground);
+}
+
+body:after{
+    content:"";
+    display: block;
+    background-image:url(../../img/mtfuji.png);
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center 13vh;
+    width:100%;
+    max-width:680px;
+    height:500px;
+    margin:0 auto;
+    opacity:1.0;
+}
+
+#bg-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    z-index: 1;
+}
+
+
+#categories{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index:10;
+    background:#375187;
+    backdrop-filter: blur(6px);
+}
+
+
+#categories ul{
+    display: flex;
+    justify-content:center;
+    list-style: none;
+    padding:0;
+    margin:0;
+}
+
+#categories ul li{
+    padding:10px 20px;
+    color:#FFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.2s;
+    pointer-events: auto;
+    font-size:14px;
+    width:max-width;
+}
+
+#categories ul li.select{
+    background: #FFF;
+    color:#375187;
+    font-weight:700;
+    font-size:1.1em;
+}
+
+#categories ul li.c0{
+    display: none;
+}
+
+#categories ul li:hover {
+    /*transform: translateY(-4px);*/
+    box-shadow: 3px 3px 5px #0006;
+}
+
+#category-ui {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap:40px;
+    pointer-events: none;
+}
+
+#bana{
+    width:100%;
+    max-width:680px;        
+}
+
+#bana img{
+    width:100%;
+    height:auto;
+}
+
+#category-ui{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#ev{
+    position: fixed;
+    bottom:-100%;
+    left:0;
+    z-index:1000;
+    display: flex;
+    justify-content: center;
+    gap:20px;
+    padding:0 0 10px;
+    border-right:none;
+    transition-duration: .5s;
+    width:100%;
+}
+
+#ev.active{
+    bottom:0;
+}
+
+#ev button{
+    line-height:1.0;
+    padding:0;
+    margin:0;
+    display: block;
+    width:40px;
+    height:40px;
+    cursor: pointer;
+    background:none;
+    border:none;
+}
+
+#ev button img{
+    filter: drop-shadow(2px 2px 2px #000);
+}
+
+#ev.under #down,
+#ev.under #up{
+    display: none;
+}
+
+/* popup page
+----------------------------------------------*/
+
+#booth{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    z-index:10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    background:#000c;
+    transition-duration: .5s;
+    opacity:0;
+    pointer-events: none;
+}
+
+#booth.active{
+    opacity:1.0;
+}
+
+#boothBox{
+    width:100%;
+    height:100%;
+    position:fixed;
+    z-index:10000;
+    /*background:linear-gradient(#FFF,#CCC);*/
+    background: var(--bodybackground);
+    backdrop-filter: blur(6px);
+    padding:0;
+    overflow-y:auto;
+    position: relative;
+    pointer-events: auto;
+    transition-duration: 1.0s;
+    transition-delay: 0.5s;
+    transform: scale(0.0);
+}
+
+#booth.active #boothBox{
+    transform: scale(1.0);
+}
+
+.boothinner{
+    width:100%;
+    max-width:880px;
+    padding:20px;
+    margin:0 auto;
+}
+
+#boothheader{
+    /*background:#336;*/
+    background:var(--headerbackground);
+    height:80px;
+    padding:20px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap:30px;
+}
+
+#boothheader #logo{
+    height:40px;
+}
+
+#boothheader #logo img{
+    height:100%;
+    width:auto;
+}
+
+
+#boothheader #companyname{
+    font-size:20px;
+    font-weight:700;
+    color:#FFF;
+}
+
+#boothBox .close{
+    position: absolute;
+    top:10px;
+    right:10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:30px;
+    height:30px;
+    font-size:20px;
+    font-weight:700;
+    border:1px solid #333;
+    background:#0009;
+    color:#FFF;
+    transition-duration: .5s;
+    border-radius: 5px;
+}
+
+#boothBox .close:hover{
+    background:#FFF;
+    color:#000;
+}
+
+#boothBox figure{
+    padding:0 20px 20px;
+    width:100%;
+    max-width: 480px;
+    margin:0 auto;
+}
+
+#boothBox figure img{
+    margin:0 auto;
+    width:100%;
+    height:auto;
+}
+
+#boothmain{
+    padding:30px 0 0;
+    text-align: center;
+    min-height:calc(100% - 340px);
+}
+
+#boothmain h2{
+    font-size:clamp(24px,5vw,40px);
+    text-align: center;
+    line-height:1.75;
+    margin-bottom:20px;
+    color:#FFF;
+    padding:0 20px;
+}
+
+#boothmain h3{
+    line-height:1.75;
+    font-size:clamp(16px,5vw,20px);
+    text-align: center;
+    margin-bottom:20px;
+    color:#FFF;
+    padding:0 20px;
+}
+
+@media(max-width:780px){
+
+}
+
+#boothmain #btnBox{
+    padding:20px 0;
+}
+
+#boothmain .btn{
+    text-decoration: none;
+    font-weight: 700;
+    padding:20px 20px;
+    width:220px;
+    margin:0 auto;
+    background:#FFF;
+    color:#37518A;
+    outline:1px solid #37518A;
+    border:2px solid #37518A;
+    outline-offset: -5px;
+}
+
+#boothfooter{
+    background:#333;
+    height:140px;
+}
+
+#boothfooter *{
+    color:#FFF;
+}
+
+#company{
+    font-weight: 700;
+    font-size:16px;
+}
+
+#address,
+#zip{
+    line-height: 1.0;
+    font-size:14px;
+}
+
+#tel{
+    margin-top:5px;
+}
+
+#boothBox #description{
+    margin:30px 0 0;
+    background:#FFF9;
+    padding:20px 0;
+    box-shadow: 0 0 10px #0001;
+}
+
+#boothBox #description p{
+    padding:20px;
+    background:#FFF;
+    border-radius: 10px;
+    max-width:680px;
+    margin:0 auto;
+    text-align: left;
+}
+
+#boothBox #description h2{
+    color:#37518A;
+}
+

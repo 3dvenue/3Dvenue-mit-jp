@@ -1,0 +1,341 @@
+/*
+* 3Dvenue - Experiential Space Engine
+* Copyright (c) 2026 yoshihiro
+* This software is released under the MIT License.
+* https://opensource.org/licenses/MIT
+* "Transforming information from browsing to residing."
+*/
+
+html,body{
+	padding:0;
+	margin:0;
+}
+
+body *{
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height:1.75;
+}
+
+*{
+	padding:0;
+	margin:0;
+	box-sizing: border-box;
+}
+
+.inner{
+	width:100%;
+	max-width:1080px;
+	margin:0 auto;
+	padding:0 20px;
+}
+
+h1{
+	font-size:50px;
+}
+
+h2{
+	font-size:40px;	
+}
+
+h3{
+	font-size:24px;	
+}
+
+/* header
+--------------------------------------*/
+
+header{
+	background:#000;
+	color:#FFF;
+	padding:20px 0;
+	font-weight:900;
+	position: relative;
+}
+
+.palette{
+	position: absolute;
+	top:10px;
+	right:20px;
+	width:30px;
+	height:30px;
+}
+
+#goback{
+	position: absolute;
+	top:10px;
+	right:120px;
+}
+
+/* main
+--------------------------------------*/
+main{
+	background:none;
+}
+
+main section{
+	border-radius:0;
+	margin: 20px 0 50px;
+	background:none;
+}
+
+main section h2{
+	position: relative;
+}
+
+
+/* bana表示
+--------------------------------------*/
+#banaArea{
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap:20px;
+	pointer-events: none;
+	z-index:10000;
+}
+
+#banaArea #result{
+	width:100%;
+	max-width:480px;
+	height:auto;
+}
+
+#banaArea #result,
+#banaArea button{
+	display: none;
+}
+
+#banaArea #result img{
+	width:100%;
+	height:auto;
+}
+
+#banaArea.view{
+	background:#000;
+	pointer-events: auto;
+}
+
+#banaArea.view #result,
+#banaArea.view button{
+	display: block;
+}
+
+canvas{
+	width:100%;
+	max-width:1000px;
+	height:auto;
+}
+
+
+/* eyecatch
+--------------------------------------*/
+
+#eyecatch{
+	padding:100px 0;
+	background:#6699FF;
+	background-size:cover !important;
+	background-repeat:no-repeat !important;
+	background-position:center !important;
+	position: relative;
+	height:500px;
+}
+
+#eyecatch #makebana{
+	position:absolute;
+	left:calc(50% - 75px);
+	bottom:-50px;
+	width:100px;
+	background:#FFF;
+	padding:10px;
+	border-radius: 100px;
+	border:3px solid #333;
+	cursor: pointer;
+}
+
+#eyecatch #makebana span{
+	position:absolute;
+	bottom:20px;
+	left:calc(50% - 75px);
+	width:150px;
+	background:#FFF;
+	color:#333;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height:50px;
+	pointer-events: none;
+	opacity:0;
+	transition-duration: .5s;
+}
+
+#eyecatch #makebana:hover span{
+	opacity:1;
+}
+
+#eyecatch #background{
+	position: absolute;
+	top:10px;
+	right:15px;
+	width:40px;
+	height:40px;
+	z-index:10;
+	cursor: pointer;
+}
+
+#eyecatchfilter{
+	position: absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background:#0006;	
+	z-index:0;
+	pointer-events: none;
+}
+
+#eyecatch .inner{
+}
+
+#eyecatch .overlay{
+	position: absolute;
+	position:relative;
+	top:0;
+	left:0;
+	z-index:1;
+}
+
+#eyecatch *{
+	text-align: center;
+	color:#FFF;
+}
+
+#eyecatch #organizer{
+	font-weight: 700;
+	font-size:24px;
+}
+
+#eyecatch .period{
+	padding:0;
+	margin:0;
+	font-weight:700;
+	font-size:24px;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#eyecatch .year{
+	font-size:24px;
+}
+
+#eyecatch .month,
+#eyecatch .day{
+	font-size:40px;
+	margin:0 3px;
+}
+
+#eyecatch span.week{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	width:30px;
+	height:30px;
+	border:1px solid #FFF;
+}
+
+#eyecatch.view{
+	width:900px;
+}
+
+#eyecatch.view #background,
+#eyecatch.view #makebana{
+	display: none;
+}
+
+/*  main
+--------------------------------------- */
+main{
+	padding:0;
+}
+
+
+main h2{
+	font-size:30px;
+	background:#999;
+	color:#FFF;
+	margin-bottom:40px;
+	border-radius:40px;
+}
+
+main section{
+	padding:50px 0;
+	text-align: center;
+}
+
+main section#about p{
+	max-width:680px;
+	margin:0 auto;
+	text-align: left;
+	line-height:1.8;
+	font-size:18px;
+}
+
+main section ul{
+	list-style: none;
+	padding:0;
+	margin:0;
+}
+
+main section#venue ul,
+main section#venue p{
+	background:#FFF;
+	padding:20px 40px;
+	margin:10px auto 40px;
+	width:100%;
+	max-width:max-content;
+	border-radius:10px;
+	box-shadow: 0 0 10px #0001;
+	font-size:20px;
+}
+
+main section#venue p.category{
+	display: flex;
+	gap:20px;
+	flex-wrap: wrap;
+	font-size:14px;
+	font-weight: 700;
+}
+
+
+main section#venue ul li{
+	text-align: left;
+	margin:10px 0;
+	font-weight: 700;
+}
+
+main section#venue ul li:before{
+	content:"✅";
+	margin-right:5px;
+
+}
+
+main #venue{
+	background:#0001;
+}
+
+/*  footer
+--------------------------------------- */
+
+footer{
+	padding:20px 0;
+	text-align: center;
+	background:#000;
+	color:#FFF;
+}

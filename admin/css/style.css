@@ -1,0 +1,193 @@
+/*
+* 3Dvenue - Experiential Space Engine
+* Copyright (c) 2026 yoshihiro
+* This software is released under the MIT License.
+* https://opensource.org/licenses/MIT
+* "Transforming information from browsing to residing."
+*/
+
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+.inner{
+  width:100%;
+  max-width:1200px;
+  padding:0 20px;
+  margin:0 auto;
+}
+
+body *{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height:1.75;
+    box-sizing: border-box;
+    user-select: none;
+    transition-duration: .5s;
+}
+
+h1, h2, h3{
+  margin-top:0;
+}
+
+a {
+  color: blue;
+  text-decoration: none;
+}
+
+img {
+  height: auto;
+  display: block;
+}
+
+table{
+  border-spacing: 0;
+}
+
+table th,
+table td{
+  border:1px solid #666;
+}
+
+table input{
+  padding:10px 20px;
+}
+
+/* header
+------------------------------------*/
+header{
+  padding:20px 0;
+  background:#f0f0f0;
+}
+
+
+/* nav
+------------------------------------*/
+nav{
+  border-bottom:1px solid #f0f0f0;
+}
+
+nav ul{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav ul li{
+  list-style:none;
+  padding:0;
+  margin:0;
+  flex:auto;
+}
+
+nav ul li a{
+  height:40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:#000;
+  text-decoration: none;
+  background:#FFF;
+}
+
+nav ul li a:hover{
+  background:#e0e0e0;
+}
+
+/* main
+------------------------------------*/
+main{
+  padding:50px 0;
+  background:#f0f0f0;
+  min-height:calc(100vh - 120px);
+}
+
+
+section{
+  position: relative;
+  background:#FFF;
+  padding:20px 40px;
+  border-radius:10px;
+}
+
+section > .button{
+  position: absolute;
+  top:20px;
+  right:20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:40px;
+  height:40px;
+  background:#000;
+  color:#FFF;
+  font-size:30px;
+  cursor: pointer;
+  line-height: 1.0;
+}
+
+section select{
+  padding:10px 10px;
+  border-radius: 6px;
+  font-size:16px;
+}
+
+section h3{
+  margin-bottom:20px;
+  position: relative;
+}
+
+section h3 .button,
+section h4 .button{
+  position: absolute;
+  top:3px;
+  right:10px;
+  line-height: 1.0;
+  display:flex;
+  width:25px;
+  height:25px;
+  background:#000;
+  color:#FFF;
+  justify-content: center;
+  align-items: center;
+  margin:0;
+  cursor: pointer;
+  font-weight:700;
+  font-size:20px;
+}
+
+section#category ul,
+section#sub ul{
+  display: flex;
+  gap:20px;
+  list-style:none;
+  padding:0;
+  margin:0 0 40px;
+  flex-wrap: wrap;
+}
+
+section#category ul li,
+section#sub ul li{
+  cursor: pointer;
+  padding:10px 20px;
+  border:1px solid #333;
+  border-radius:7px;
+}
+
+
+/* footer
+-------------------------------------*/
+footer{
+  background:#F0F0F0;
+}
+
+footer .inner{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:39px;
+  font-size:12px;
+}

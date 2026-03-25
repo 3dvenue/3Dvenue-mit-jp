@@ -1,0 +1,189 @@
+/*
+* 3Dvenue - Experiential Space Engine
+* Copyright (c) 2026 yoshihiro
+* This software is released under the MIT License.
+* https://opensource.org/licenses/MIT
+* "Transforming information from browsing to residing."
+*/
+
+#reset,
+#pinform,
+#login{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap:20px;
+}
+
+#pinform p,
+#login p{
+	text-align: center;
+}
+
+#resetform,
+#pincode,
+#form{
+	background:#FFF;
+	padding:20px 40px;
+	border:1px solid #ccc;
+	border-radius: 7px;
+	box-shadow: 0 0 10px #0006;
+	max-width:580px;
+}
+
+ol{
+	max-width: 580px;
+	padding:0;
+	margin:0 2rem;
+}
+
+ol li{
+	line-height:1.3;
+	margin-bottom:1.0rem;
+	margin-left:1rem;
+}
+
+#pincode div,
+#form div{
+	/*margin-bottom:20px;*/
+}
+
+#result{
+	text-align: center;
+	font-weight:700;
+	font-size:18px;
+}
+
+#form div input{
+	max-width:300px;
+}
+
+#form input#zip{
+	max-width:200px;
+}
+
+#form input#prefecture,
+#form input#address1,
+#form input#address2{
+	max-width:100%;
+}
+
+#form div #applicationbtn{
+	margin-top:20px;
+	text-align: center;
+}
+
+#pincode div label,
+#form div label{
+	display: inline-block;
+	width:100%;
+}
+
+#reset label{
+	position: relative;
+	display: block;
+	margin-bottom:20px;
+	text-align: right;
+	line-height:1.0;
+}
+
+#reset label .img{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top:0;
+	right:0;
+	width:30px;
+	height:30px;
+	border:1px solid #333;
+	background:#FFF;
+	cursor: pointer;
+}
+
+#reset label .img img{
+	width:24px;
+	height:24px;
+}
+
+#reset input{
+	height:30px;
+	padding-right:40px;
+}
+
+#pincode input,
+#form input{
+	width:100%;
+	padding:5px;
+	margin-bottom:10px;
+	border-radius:5px;
+	border:1px solid #333;
+}
+
+#pincode button,
+#form button{
+/*	margin-top:10px;
+	padding:5px 20px;
+	border:1px solid #333;
+	border-radius:5px;
+	cursor: pointer;
+*/}
+
+#button{
+	padding-top:20px;
+	text-align: center;
+}
+
+#memo{
+	text-align: center;
+	margin-top:10px;
+}
+
+#pincode #result > div{
+	display: none;
+	color:red;
+}
+
+#pincode.OK #result > div#OK,
+#pincode.nopin #result > div#nopin,
+#pincode.expired #result > div#expired,
+#pincode.mismatch #result > div#mismatch{
+	display: block;
+}
+
+#pincode.OK .post{
+	display: none;
+}
+
+
+#resetbtn{
+	display: none;
+}
+
+#resetbtn.reset{
+	display:block;
+}
+
+#success{
+	display: none;
+}
+
+#reset.success #success{
+	display:block;
+}
+
+#NG,
+#reset.success p,
+#reset.success #resetform{
+	display: none;
+}
+
+/*#reset #NG{
+	display: none;
+}
+*/
+body.NG #text,
+body.NG #resetform{
+	display: none;
+}
