@@ -44,10 +44,23 @@
 - **I sincerely hope this "seed" becomes the starting point for new ideas beyond my imagination.** (この「種」が起点となり、私の想像すら及ばないような新しいアイデアへと展開することを切に願う。)
 
 - **This is not just a modification of what exists, but the enrichment of the soil of the 3D Web.** (これは3D Webという土壌そのものを豊かにし、人類の可能性を次の一歩へと押し進めるための「進化の始まり」であると、私は確信している。)
+  
+---
+  
+### **5. MIT License — Legal Terms | ライセンス（法的説明）**
+
+**This software is released under the MIT License. You are free to use, modify, and distribute it, even for commercial purposes, provided that the copyright notice and this permission notice are included.**
+（このソフトウェアはMITライセンスのもとで公開されています。著作権表示および本許諾表示を記載することを条件に、商用利用を含め、自由に使用、改変、配布を行うことができます。）
+
+**For the full text of the license, please refer to the LICENSE file included in this repository.**
+（ライセンスの全文については、本リポジトリに含まれるLICENSEファイルをご参照ください。）
+
+**"Logic is weightless. Strip away the engine, and only dozens of kilobytes of pure intent remain. Like DNS, MIDI, and TRON—the smaller the code, the closer it is to the truth."**
+（論理に重さはない。エンジンを除けば、そこには数十KBの純粋な意志だけが残る。DNS、MIDI、TRONのように——コードが小さければ小さいほど、それは真理に近い。）
 
 ---
 
-### **5. A New Era of Sharing, Not Monopoly | 独占ではなく共有**
+### **6. A New Era of Sharing, Not Monopoly | 独占ではなく共有**
 
 - **"If Google fails to define the standards for Web 5.0, another pioneer surely will."** (もしGoogleがこの指標を示さないのであれば、他の誰かがその役割を担うことになるだろう。)
 
@@ -79,51 +92,51 @@
 
 ---
 
-### Security Enhancement Ideas | セキュリティ強化のアイデアと提案
+### 🛡️Security Enhancement Ideas | セキュリティ強化のアイデアと提案
 
 - **This system will become a true "Fortress Base"—because its minimal logic allows you to easily inject these powerful security layers.** (**このシステムは、まさに「要塞のベース」となるでしょう。なぜなら、ロジックが最小限に設計されているため、以下のような強力なセキュリティレイヤーを極めて容易に組み込むことが可能だからです。**)
 
 ---
 
-1. **Comprehensive Access Logging (Honeypot Design)**:
+1. **🍯Comprehensive Access Logging (Honeypot Design)**:
    The fake `login.php` page logs not only the IP address and timestamp of every login attempt but also **every attempted account name and password**, exposing the attacker's tactics entirely.
    (1. **徹底的なアクセスロギング（ハニーポット設計）**：偽のログインページ（`login.php`）を用意し、ログイン試行のたびにIPアドレスや時刻はもちろん、**入力されたアカウント名とパスワードのすべて**をログに記録し、攻撃者の手の内を完全に把握します。)
     
-2. **Instant Intrusion Alerts (Real-time Detection)**:
+2. **🔔Instant Intrusion Alerts (Real-time Detection)**:
    The moment the login page is accessed, an instant email or notification is sent to the administrator. You will know exactly when an attacker has even touched the "doorknob" of your system.
    (2. **即時侵入アラート（リアルタイム検知）**: ログインページにアクセスが発生したその瞬間に、管理者（あなた）へメールや通知を飛ばします。攻撃者が扉に手をかけたことを即座に把握できます。)
     
-3. **Brute-Force Protection**:
+3. **🥁Brute-Force Protection**:
    Limit login attempts (e.g., "3 strikes and you're out"). This simple rule effectively neutralizes persistent password-guessing attempts.
    (3. **総当たり攻撃（ブルートフォース）対策**: ログイン試行回数に制限をかけます（例：3回失敗したら即アウト）。執拗なパスワード推測の試みを、単純なルールで無力化します。)
     
-4. **The "Rhythmic Knock" (Variable Counter Login)**:
+4. **🥁The "Rhythmic Knock" (Variable Counter Login)**:
    Set a specific attempt number (e.g., the 3rd attempt) as the only way to gain entry. Even with the correct password, the door remains locked until that exact "knock" is reached. Anyone who gives up after just a few tries will never enter.
    (4. **【リズム・ノック（回数指定ログイン）】**: 特定のログイン試行回数（例：3回目のみ）を「正解」として設定します。たとえ正しいパスワードを知っていても、指定された回数目の「ノック」に達するまで扉は開きません。数回試して諦める程度のハッカーは、一生中に入ることはできないでしょう。)
  
-5. **Self-Destruct (The "Nuclear" Option)**:
+5. **💣Self-Destruct (The "Nuclear" Option)**:
    If an intruder exceeds the secret limit or persists without knowing the correct "rhythm," the system will instantly auto-delete the entire directory or change permissions to "000," leaving no trace of the directory behind.
    (5. **【自爆（核オプション）】**: もし秘密の回数を超えてしつこくアクセスを繰り返したり、正しい「リズム」を知らずに無駄な試行を続けたりした場合、即座にディレクトリ全体を自動消去、あるいはパーミッションを「000」に変更することで、アクセス権ごとディレクトリを跡形もなく消し去ります。)
 
-6. **The "Invisible Entrance" (Stealth Directory)**:
+6. **👻The "Invisible Entrance" (Stealth Directory)**:
    Hide your admin path by renaming the directory from something predictable like `/admin/` to friendly, 2-byte Japanese characters like `/おはよう/` (Good Morning). It becomes an "invisible door" that attackers would never think to knock on.
    (6. **【不可視の入口（ステルス・ディレクトリ）】**: 管理用のディレクトリ名を `/admin/` のような予測しやすいものではなく、`/おはよう/` のような日常的でフレンドリーな日本語に変更してしまいましょう。攻撃者にとって、そこに入口があることすら想像できない「見えない扉」になります。)
     
-7. **The "One-Strike Policy" (One-Hit Defeat)**:
+7. **⚾🚫The "One-Strike Policy" (One-Hit Defeat)**:
    Set a counter so that if they fail even once, all subsequent access is immediately disabled. Is this a "fortress" that is perhaps a bit *too* impenetrable?
    (7. **【ワンストライク・ポリシー（一撃必殺）】**: カウントを設置し、たった一度でも間違えたら、それ以降のアクセスをすべて無効にしてしまいます。……少々、強力すぎる鉄壁でしょうか？)
  
-8. **The "Hacker Trap" (A Collector’s Honeypot)**:
+8. **🤣The "Hacker Trap" (A Collector’s Honeypot)**:
    Create a dummy `/admin/` directory to lure them in. Collect the logs of their futile attempts as a "collection" for your own observation and amusement. This is a proposal to turn the tension of security into pure, high-quality entertainment.
    (8. **【ハッカー・トラップ（観賞用ハニーポット）】**: あえて偽の `/admin/` フォルダを用意しておきましょう。そこに食いついた攻撃者の無駄な足掻きを、あなたの「観察日記」として収集するためです。緊迫したセキュリティの現場を、最高に滑稽な「エンターテインメント」に変えてしまう、遊び心あふれる提案です。)
     
-9. **The "Quantum-Defying Lock" (Kanji Basic Auth)**:
+9. **⛩️The "Quantum-Defying Lock" (Kanji Basic Auth)**:
    Use "Kanji" (Japanese characters) in your Basic Authentication. No matter how much brute-force power a modern machine throws at it, it will stand helpless before this analog, culturally-encrypted wall.
    (9. **【量子超越性を阻む壁（漢字Basic認証）】**: Basic認証のユーザー名やパスワードに、あえて「漢字」を使いましょう。最新のマシンがどれほどの計算力でゴリ押ししようとも、このアナログで深遠な日本語の壁の前では、ただ無力に立ち尽くすのみです。)
      
 ---
 
-**Closing Thoughts: From Stress to Entertainment**
+**👍✨Closing Thoughts: From Stress to Entertainment👍✨**
 (**最後に：セキュリティを「苦痛」から「娯楽」へ**)
 
 　What do you think? By combining these seemingly analog and playful ideas, security transforms from a mere "countermeasure" into pure, intellectual entertainment. 
@@ -249,14 +262,10 @@ $password = "Password";
 
 ---
 
-## 6. MIT License / ライセンス（MIT License）
+## 🛠 System Design
+詳細な設計仕様については、以下のドキュメントを参照してください。
 
-**This software is released under the MIT License. You are free to use, modify, and distribute it, even for commercial purposes, provided that the copyright notice and this permission notice are included.**
-（このソフトウェアはMITライセンスのもとで公開されています。著作権表示および本許諾表示を記載することを条件に、商用利用を含め、自由に使用、改変、配布を行うことができます。）
+* [Database Schema](./Database%20Schema.md) - DB構造・テーブル定義
+* [Project Structure](./Project%20Structure.md) - ディレクトリ構成・ファイル役割
+* [Developer Profile](https://3dvenue.github.io/3Dvenue/profile/index.html) - 開発者プロフィール
 
-**For the full text of the license, please refer to the LICENSE file included in this repository.**
-（ライセンスの全文については、本リポジトリに含まれるLICENSEファイルをご参照ください。）
-
-
-
-**"Logic is weightless. Strip away the engine, and only dozens of kilobytes of pure intent remain. Like DNS, MIDI, and TRON—the smaller the code, the closer it is to the truth."** （論理に重さはない。エンジンを除けば、そこには数十KBの純粋な意志だけが残る。DNS、MIDI、TRONのように——コードが小さければ小さいほど、それは真理に近い。）
