@@ -144,6 +144,8 @@ $queries[] = "CREATE TABLE IF NOT EXISTS `venue` (
   `h2text` varchar(30) NOT NULL DEFAULT '#FFFFFF' COMMENT 'h2テキスト色 H2 Text Color',
   `organizer` int(11) NOT NULL DEFAULT '0' COMMENT 'Organizer_id',
   `public` tinyint(4) NOT NULL DEFAULT '0' COMMENT '0非公開:1公開 0:Private/1:Public',
+  `other1` text DEFAULT NULL COMMENT '自由帳1 / Custom Config1',
+  `other2` text DEFAULT NULL COMMENT '自由帳2 / Custom Config2',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;";
 
