@@ -1,7 +1,7 @@
 [README.md](https://github.com/user-attachments/files/26253995/README.md)
 ## 1. Mission: Uniting the Power of Individuals / プロジェクトの使命（「個の力」を集結させる思想）
 
-* [English]([./Database%20Schema.md](https://github.com/3dvenue/3Dvenue)) - 海外向けバージョン
+* [English](https://github.com/3dvenue/3Dvenue) - 海外向けバージョン
 
 ###  1. Our Mission | コンセプト
 
