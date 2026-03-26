@@ -1,6 +1,8 @@
 [README.md](https://github.com/user-attachments/files/26253995/README.md)
 ## 1. Mission: Uniting the Power of Individuals / プロジェクトの使命（「個の力」を集結させる思想）
 
+* [English]([./Database%20Schema.md](https://github.com/3dvenue/3Dvenue)) - 海外向けバージョン
+
 ###  1. Our Mission | コンセプト
 
 - **3D: Digital, Dream, Deliver**
@@ -264,7 +266,6 @@ $password = "Password";
 
 ## 🛠 System Design
 詳細な設計仕様については、以下のドキュメントを参照してください。
-
 * [Database Schema](./Database%20Schema.md) - DB構造・テーブル定義
 * [Project Structure](./Project%20Structure.md) - ディレクトリ構成・ファイル役割
 * [Developer Profile](https://3dvenue.github.io/3Dvenue/profile/index-jp.html) - 開発者プロフィール
