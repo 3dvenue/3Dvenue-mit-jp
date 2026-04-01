@@ -1,0 +1,245 @@
+/*
+* 3Dvenue - Experiential Space Engine
+* Copyright (c) 2026 yoshihiro
+* This software is released under the MIT License.
+* https://opensource.org/licenses/MIT
+* "Transforming information from browsing to residing."
+*/
+
+main{
+	padding-bottom:80px;
+}
+
+#information{
+	padding-bottom:50px;
+}
+
+
+#info{
+	padding:20px 40px 0;
+	border:1px solid #666;
+	border-radius: 10px;
+}
+
+#info details{
+	margin-bottom:20px;
+}
+
+summary date{
+	margin-right:10px;
+	font-weight:700;
+}
+
+
+#venues h2{
+	margin-bottom:40px;
+	text-align: center;
+}
+
+#venueBox{
+	display: flex;
+	gap:20px;
+	flex-wrap: wrap;
+}
+
+.venue{
+	position: relative;
+	border:1px solid #999;
+	padding:20px 20px 65px;
+	width:calc(100% / 3 - 20px);
+	border-radius: 10px;
+}
+
+.venue .flex{
+	display: flex;
+	gap:20px;
+}
+
+.venue h4{
+	line-height:1.3;
+	margin-bottom:5px;
+}
+
+.venue figure{
+	width:100%;
+	height:auto;
+	aspect-ratio: 3 / 2;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	cursor: pointer;
+}
+
+.venue figure:hover{
+	opacity: 0.9;
+}
+
+.venue button{
+	position: absolute;
+	bottom:15px;
+	right:20px;
+}
+
+.venue.set:before{
+	content:"出展申込完了";
+	position:absolute;
+	top:0;
+	right:0;
+	background:#000;
+	color:#FFF;
+	font-size:12px;
+	padding:3px 15px;
+	border-radius:0 10px 0 10px;
+}
+
+.venue.set .btn.new,
+.btn.set{
+	display: none;
+}
+
+.venue.new,
+.venue.set .btn.set{
+	display: flex;
+}
+
+/* Invoice
+----------------------------------------*/
+#invoice,
+#view{
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100vh;
+	background:#000c;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transform: scale(0.0);
+	transition-duration: .5s;
+}
+
+#invoice.active,
+#view.active{
+	transform: scale(1.0);
+}
+
+#view iframe{
+	width:100%;
+	height:100%;
+	background:#FFF;
+	border:none;
+}
+
+#close{
+	position: absolute;
+	top:10px;
+	right:30px;
+	display:grid;
+	justify-content:center;
+	line-height:1.0;
+	width:30px;
+	height:30px;
+	background:#FFF;
+	color:#000;
+	font-weight: 700;
+	font-size:24px;
+	cursor: pointer;
+}
+
+.invoice{
+	position: absolute;
+	bottom:15px;
+	left:20px;
+	border:1px solid #666;
+	padding:5px 15px;
+	font-size:12px;
+	border-radius: 10px;
+	cursor: pointer;
+	font-weight: 700;
+	background:#F0F0F0;
+}
+
+#invoiceBox{
+    width: 210mm;
+    height:calc(100% - 80px);
+    background: white;
+    overflow: auto;
+}
+
+#invoicePaper {
+    width:100%;
+    min-height: 297mm;
+    padding: 20mm;
+}
+
+#invoicePaper #invoiceno{
+	text-align: right;
+	font-size:14px;
+	font-weight: 500;
+	margin-bottom:20px;
+}
+
+
+#invoicePaper h3{
+	text-align: center;
+	font-size:30px;
+	letter-spacing:.5rem;
+	margin-bottom:40px;
+}
+
+#invoicePaper #billBox{
+	margin-bottom:40px;
+}
+
+#billTo{
+	font-size:16px;
+	font-weight: 500;
+}
+
+#billFrom{
+	display:block;
+	margin:0 0 0 auto;
+    width: max-content;
+}
+
+#billFrom p{
+	font-size:14px;
+	line-height: 1.3;
+}
+
+#invoiceTitle{
+	padding:10px 0;
+	border-top:3px solid #000;
+	border-bottom:3px solid #000;
+	font-weight:700;
+}
+
+#invoiceTitle span{
+	fontsize:18px;
+}
+
+#breakdown{
+	margin-top:10px;
+	margin-bottom:80px;
+}
+
+#breakdown *{
+	font-size:14px;
+}
+
+#name{
+	font-weight: 700;
+}
+
+#memo{
+	width:calc(100% - 80px);
+	margin:0 auto;
+}
+
+#memo ul{
+	list-style: none;
+	list-style-type: "※";
+	padding:0;
+	font-size:14px;
+}
