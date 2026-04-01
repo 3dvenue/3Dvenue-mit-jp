@@ -31,31 +31,32 @@ require_once "./config.php";
 <div class="inner">
 <section id="venue">
 <h2>現在開催中の展示会</h2>
-<ul id="venues">
-<?php
-    $sql = "SELECT * FROM venue WHERE CURRENT_DATE BETWEEN start AND end AND public = 1 ORDER BY id DESC";
-    $vanues = [];
-    $stmt = $conn->prepare($sql);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $values = $result->fetch_all(MYSQLI_ASSOC);
-    foreach ($values as $row) {
-        $id = $row['id'];
-        $name = $row['name'];
-?>
-<li data-id="<?=$id?>">
-    <figure>
-        <img src="./expo/img/bana<?=$id?>.png" alt="<?=$name?>">
-    </figure>
-</li>
-<?php } ?>
+    <ul id="venues">
+    <?php
+        $sql = "SELECT * FROM venue WHERE CURRENT_DATE BETWEEN start AND end AND public = 1 ORDER BY id DESC";
+        $vanues = [];
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $values = $result->fetch_all(MYSQLI_ASSOC);
+        foreach ($values as $row) {
+            $id = $row['id'];
+            $name = $row['name'];
+    ?>
+        <li data-id="<?=$id?>">
+            <figure>
+                <img src="./que/<?=$id?>/bana.webp" alt="<?=$name?>">
+            </figure>
+        </li>
+    <?php } ?>
+    </ul>
 </section>
 </div>
 </main>
 
 <div id="view">
     <section>
-        <div id="close">&times;</div>
+        <div id="close">✕</div>
         <iframe id="expo"></iframe>
     </section>
 </div>
@@ -79,3 +80,5 @@ $(function(){
 
 });
 </script>
+</body>
+</html>

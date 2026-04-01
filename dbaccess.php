@@ -10,7 +10,7 @@
 mysqli_report(MYSQLI_REPORT_OFF);
 error_reporting(E_ALL & ~E_WARNING);
 
-// --- データベース接続 ---
+// --- DB Setting ---
 $servername = "Server　Name";
 $dbname = "Database Name";
 $username = "User Name";

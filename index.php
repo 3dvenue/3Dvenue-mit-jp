@@ -19,7 +19,7 @@ require_once "./config.php";
     <link rel="stylesheet" type="text/css" href="./common/css/style.css">
     <link rel="stylesheet" type="text/css" href="./common/css/index.css">
     <link rel="icon" href="./favicon.ico">
-    <title>3DVenue MITライセンス</title>
+    <title>3DVenue - バーチャル展示会場構築エンジン（MITライセンス）</title>
 <style type="text/css">
 </style>
 
@@ -29,20 +29,19 @@ require_once "./config.php";
 <div id="eyecatch">
     <div class="inner">
         <div class="overlay">
-
         <h1>あなたのホームページを<br />
-            バーチャル展示会への<br />
-            入口に。
+            バーチャル展示会への入口に。
         </h1>
             <p>
-            小規模事業者のための新しいチャンス。<br>
+            展示会構築の為のシステムをMITライセンスで公開しました。<br/>
+            中小規模事業者のための新しいチャンス。<br>
             ホームページを展示ブースへと変える、負担の少ない仕組み。<br>
-            誰でも参加できる、次世代のオープンプラットフォーム。
+            使い方次第で様々な用途にご利用いただけると思います。
         </p>
         </div>
         <div id="eycatchCenter">
         <a href="acount.php">出展者登録</a>
-        <a href="./expo/1/" target="_blank">デモ展示を見る</a>
+        <a href="https://github.com/3dvenue/3Dvenue-mit-jp" target="_blank">Githubからダウンロード</a>
         </div>
      </div>
 </div>
@@ -74,8 +73,8 @@ require_once "./config.php";
 <section id="content">
     <h2>コンテンツ</h2>
     <div id="features">
-        <div><figure><a href="about.php"><img src="./img/about.png" alt="3DVenueバーチャル展示会とは"></a></figure></div>
-        <div><figure><a href="expo.php"><img src="./img/exhibitors.png" alt="公開中の3DVenueバーチャル展示会"></a></figure></div>
+        <div><figure><a href="about.php"><img src="./img/about.webp" alt="3DVenueバーチャル展示会とは"></a></figure></div>
+        <div><figure><a href="expo.php"><img src="./img/exhibitors.webp" alt="公開中の3DVenueバーチャル展示会"></a></figure></div>
     </div>
 </section>
 
@@ -95,7 +94,7 @@ require_once "./config.php";
             while ($row = $result->fetch_assoc()) {
             $id = $row['id'];
         ?>
-        <li><figure><a href="./expo/<?=$id?>" target="_blank"><img src="./expo/img/bana<?=$id?>.png"></a></figure></li>
+        <li><figure><a href="./expo/<?=$id?>/" target="_blank"><img src="./que/<?=$id?>/bana.webp"></a></figure></li>
         <?php } ?>
         </ul>
         </div>
