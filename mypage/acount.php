@@ -36,31 +36,41 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (isset($_POST['submit']) && $_POST['submit'] === 'logupload') {
             if (isset($_FILES['logomark']) && $_FILES['logomark']['error'] === UPLOAD_ERR_OK) {
                 $uploadDir = '../logo/';
-                $fileName = basename($_FILES['logomark']['name']);
-                $ext = pathinfo($fileName, PATHINFO_EXTENSION);
-                $newFileName = $login_id . '.' . $ext;
-                $targetPath = $uploadDir . $newFileName;
+                $tmpName = $_FILES['logomark']['tmp_name'];
+                
+                $image = imagecreatefromstring(file_get_contents($tmpName));
+                
+                if ($image) {
+                    imagealphablending($image, false);
+                    imagesavealpha($image, true);
 
-                if (!is_dir($uploadDir)) {
-                    mkdir($uploadDir, 0755, true);
-                }
+                    if (!is_dir($uploadDir)) {
+                        mkdir($uploadDir, 0755, true);
+                    }
+                    $newFileName = $login_id . '.webp';
+                    $targetPath = $uploadDir . $newFileName;
 
-                if (move_uploaded_file($_FILES['logomark']['tmp_name'], $targetPath)) {
-                    $sql = "UPDATE company SET logo = ? WHERE cid = ? AND uuid = ? AND email = ?";   
-                    $stmt = $conn->prepare($sql);
-                    $stmt->bind_param("siss", $ext, $login_id, $login_uuid, $login_email);
-                    $stmt->execute();
-                    header("Location: acount.php");
-                    exit;
-
+                    if (imagewebp($image, $targetPath, 90)) {
+                        imagedestroy($image);
+                        $ext = "webp";
+                        $sql = "UPDATE company SET logo = ? WHERE cid = ? AND uuid = ? AND email = ?";   
+                        $stmt = $conn->prepare($sql);
+                        $stmt->bind_param("siss", $ext, $login_id, $login_uuid, $login_email);
+                        $stmt->execute();                        
+                        header("Location: acount.php");
+                        exit;
+                    } else {
+                        $status = "WebP変換に失敗しました。";
+                    }
+                    imagedestroy($image);
                 } else {
-                    $status = "アップロードに失敗しました。";
+                    $status = "画像の形式が正しくありません。";
                 }
             } else {
-                    $status = "アップロード中にエラーが発生しました。";
+                $status = "アップロード中にエラーが発生しました。";
             }
         }
-
+        
 }
 ?>
 <!DOCTYPE html>
@@ -114,7 +124,7 @@ while ($row = $result->fetch_assoc()) {
     $logo = $row['logo'];
     if(!empty($logo)){
       $timestamp = time();
-      $logoimage = "background-image:url(../logo/{$login_id}.{$logo}?t={$timestamp})";
+      $logoimage = "background-image:url(../logo/{$login_id}.webp?t={$timestamp})";
       $classname = "active";
     }
 ?>

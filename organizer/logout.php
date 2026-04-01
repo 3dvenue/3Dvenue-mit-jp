@@ -10,8 +10,6 @@
 session_start();
 unset($_SESSION['oid']);
 unset($_SESSION['comapny_name']);
-// $_SESSION = array();
-// session_destroy();
 header("Location: ./");
 exit;
 ?>

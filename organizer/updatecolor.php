@@ -8,8 +8,8 @@
 */
 include_once "auth.php";
 $name = $_POST['name'] ?? null;
-$color = $_POST['color'] ?? null;
-$id = $_POST['id'] ?? null;
+$color = mysqli_real_escape_string($conn, $_POST['color'] ?? '');
+$id    = (int)($_POST['id'] ?? 0);
 
 // ID と color の存在チェック
 if ($id === null || $name === null || $color === null) {

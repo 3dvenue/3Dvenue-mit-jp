@@ -13,7 +13,7 @@ main {
 
 #eyecatch {
 	position: relative;
-	background-image: url(../../img/eyecatch.jpg);
+	background-image: url(../../img/eyecatch.webp);
 	background-repeat: no-repeat;
 	background-size:auto 100%;
 	background-position:right center;
@@ -23,7 +23,7 @@ main {
 
 #eyecatch h1{
 	padding:0;
-	margin-bottom:1.8em;
+	margin-bottom:1.5em;
 	text-shadow: 1px 1px 5px #FFF;
 	font-size:50px;
 	text-align: left;

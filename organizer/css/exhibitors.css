@@ -120,17 +120,8 @@ main #memo{
 	position:absolute;
 	top:0;
 	right:20px;
-	display: flex;
 	background:#000;
-	display: flex;
-	justify-content: center;
-	align-items: center;
 	color:#FFF;
-	cursor: pointer;
-	width:40px;
-	height:40px;
-	font-weight: 700;
-	font-size:24px;
 }
 
 #web iframe{

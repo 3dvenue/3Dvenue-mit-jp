@@ -98,11 +98,9 @@ button{
         <div class="inner">
 
             <section id="login">
-                
                 <div style="margin-bottom:20px">このページはFAKEページです実際にはログインできません(実運用の時はこれを消してね)<br/>
                 ログインの初期ページはorganizer_login.phpです。名前を変えて運用してください<br />
                 この初期ログインページは、adminから全て運用する場合は不要です。</div>
-                
                 <h1>主催者ログイン</h1>
                 <div id="form">
                     <form method="POST">

@@ -83,7 +83,7 @@ if(empty($company)){
 
         $set = !empty($row['exid']) ? "set" : "";
         $matched_id = $row['exid'] ?? "";
-        $bana = "../expo/img/bana{$id}.png?t=".time();
+        $bana = "../que/{$id}/bana.webp?t=".time();
       ?>
         <div class="venue <?=$set?>">
             <div class="flex"><figure style="background-image:url(<?=$bana?>)" data-id="<?=$id?>"></figure></div>
@@ -102,7 +102,7 @@ if(empty($company)){
 </div>
 </main>
 <div id="view">
-    <div id="close">&times;</div>
+    <div id="close">✕</div>
     <iframe src=""></iframe>
 </div>
 

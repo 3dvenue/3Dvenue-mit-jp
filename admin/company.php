@@ -17,8 +17,8 @@ $vname = "出展社一覧";
 $title = "出展社管理";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $submit = $_POST['submit'];
-    $cid = $_POST['cid'];
+    $submit = $_POST['submit'] ?? ''; 
+    $cid = (INT)$_POST['cid'] ?? '0';
     switch ($submit) {
       case 'yes': 
             $sql = "UPDATE company SET status = 1 WHERE cid = '$cid'";
@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 if (isset($_GET['vid']) && $_GET['vid'] !== "") {
-    $vid = $_GET['vid'];
+    $vid = (int)($_GET['vid'] ?? 0);
     $expo = "venue";
     $title = "参加企業一覧";
     
@@ -74,7 +74,7 @@ if (isset($_GET['vid']) && $_GET['vid'] !== "") {
     <h2><?=$title?></h2>
 <section id="companies">
 <span id="add">+</span>
-<h3><?=$vname?></h3>
+<h3><?=$vname?> <a class="btn" href="../mypage" target="_mypage">主催者ページ</a></h3>
 <div id="view"><span class="view">停止中を表示</span></div>
 <table>
     <tr>
@@ -121,7 +121,7 @@ if (isset($_GET['vid']) && $_GET['vid'] !== "") {
 
 <div id="companyedit">
     <div id="check">
-        <div class="close">&times;</div>
+        <div class="close">✕</div>
         <h3 id="companyname"></h3>
         <p>マイページにアクセスします。</p>
         <input type="hidden" name="cid" id="cid" />
@@ -130,7 +130,7 @@ if (isset($_GET['vid']) && $_GET['vid'] !== "") {
 </div>
 
 <div id="frame">
-        <div class="close">&times;</div>
+        <div class="close">✕</div>
         <div id="iframetitile">企業専用ページ</div>
         <iframe src="../login.php"></iframe>
 </div>
@@ -155,6 +155,7 @@ if (isset($_GET['vid']) && $_GET['vid'] !== "") {
             $('#frame iframe').attr('src','jump_mypage.php?id=' + id);
             $('#frame').addClass('active');
             $('#companyedit').removeClass();
+            $('#companies').addClass('link');
         });
 
         $('#add').on('click', function() {

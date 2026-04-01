@@ -75,7 +75,7 @@ if (isset($_GET['oid']) && is_numeric($_GET['oid'])) {
 
 <section id="organizer">
 <button id="add" class="button">+</button>
-<h3>主催者管理</h3>
+<h3>主催者管理 <a class="btn" href="../organizer/" target="_organizer">主催者ページ</a></h3>
 <table>
     <tr>
         <th>組織・団体名</th>
@@ -113,7 +113,7 @@ if (isset($_GET['oid']) && is_numeric($_GET['oid'])) {
 </main>
 <div id="form">
      <div id="addform">
-        <div class="close">&times;</div>
+        <div class="close">✕</div>
             <form method="post">
             <input type="hidden" name="id" id="id" />
             <label for="company"><span>組織・団体名</span><input type="text" name="company" id="company" placeholder="組織・団体名を入力" required /></label>
@@ -133,7 +133,7 @@ if (isset($_GET['oid']) && is_numeric($_GET['oid'])) {
 
 <div id="companyedit">
     <div id="check">
-        <div class="close">&times;</div>
+        <div class="close">✕</div>
         <h3 id="companyname"></h3>
         <p>主催者専用ページにアクセスします。</p>
         <input type="hidden" name="oid" id="oid" />
@@ -142,7 +142,7 @@ if (isset($_GET['oid']) && is_numeric($_GET['oid'])) {
 </div>
 
 <div id="frame">
-        <div class="close">&times;</div>
+        <div class="close">✕</div>
         <div id="iframetitile">主催者管理画面</div>
         <iframe src="../organizer/login.php"></iframe>
 </div>
@@ -164,6 +164,7 @@ if (isset($_GET['oid']) && is_numeric($_GET['oid'])) {
             $('#frame iframe').attr('src','jump_organizer.php?o=' + oid + '&c='+cname);
             $('#frame').addClass('active');
             $('#companyedit').removeClass();
+            $('#organizer').addClass('link');
         });
 
         $('#check .close').on('click',function(){

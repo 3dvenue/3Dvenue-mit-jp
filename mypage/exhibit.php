@@ -36,12 +36,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	    exit;
 	}
 
-		$title = $_POST['title'] ?? null;
-		$subtitle = $_POST['subtitle'] ?? null;
-		$description = $_POST['description'] ?? null;
-		$category = $_POST['category'] ?? 0;
-		$url = $_POST['url'] ?? null;
-		$telno = $_POST['telno'] ?? null;
+	$title = mysqli_real_escape_string($conn, $_POST['title'] ?? '');
+	$subtitle = mysqli_real_escape_string($conn, $_POST['subtitle'] ?? '');
+	$description = mysqli_real_escape_string($conn, $_POST['description'] ?? '');
+	$category = mysqli_real_escape_string($conn, $_POST['category'] ?? 0);
+	$url = mysqli_real_escape_string($conn, $_POST['url'] ?? '');
+	$telno = mysqli_real_escape_string($conn, $_POST['telno'] ?? '');
 
 	if($submit == "add"){
 
@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	}
 
 
-$logoimage = "../logo/".$cid.'.png?t='.time();
+$logoimage = "../logo/".$cid.'.webp?t='.time();
 
 
 }
@@ -84,9 +84,8 @@ $logoimage = "../logo/".$cid.'.png?t='.time();
 <?php include_once 'header.php'; ?>
 <main>
 <?php
-$mycard = "../expo/{$vid}/{$cid}.jpg";
+$mycard = "../que/".$vid."/".$cid.".webp";
 $mypath = "";
-// $path = __DIR__ . "/" . $mycard;
 $path = $mycard;
 if (file_exists($path)) {
 	$mypath = "card";
@@ -176,12 +175,12 @@ while ($row = $result->fetch_assoc()) {
 
 <div id="card">
 	<div id="mycard" style="background:linear-gradient(#fff,#ccc);">
-		<div id="logoimage" style="width:300px;top:40px;left:160px;background-image:url(<?=$logoimage?>);"><span id="caption">LOGO</span></div>
+		<div id="logoimage" style="width:300px;top:40px;left:160px;background-image:url(<?=$logoimage?>?t=<?=time()?>);"><span id="caption">LOGO</span></div>
 		<div id="companyname" style="font-size:30px;text-align:center;top:380px;left:10px;"><?=$company?></div>
 	</div>
 
 	<div id="editor">
-		<div id="cardclose">&times;</div>
+		<div id="cardclose" class="close">✕</div>
 
 		<div id="text">
 			会社名：
@@ -217,12 +216,15 @@ while ($row = $result->fetch_assoc()) {
 			<!-- <span id="logoupload" class="upload"><img src="../img/cloud.svg"></span> -->
 		</div>
 
-		<div><button id="cardset" class="btn">カードプレビュー</button></div>
+		<div id="editbtn"><span id="editbtn"><button id="cardset" class="btn">カードプレビュー</button></span></div>
 	</div>
 </div>
 </section>
 
 <section id="infomation" class="<?=$mypath?>">
+
+
+
 <div id="textform">
 
 <h3>出展情報編集</h3>
@@ -275,8 +277,8 @@ while ($row = $result->fetch_assoc()) {
 		</tr>
 		<tr>
 			<td colspan="2">
-				<button type="submit" name="submit" id="add" value="add">登録</button>
-				<button type="submit" name="submit" id="update" value="update">更新</button>
+				<button type="submit" name="submit" class="btn" id="add" value="add">登録</button>
+				<button type="submit" name="submit" class="btn" id="update" value="update">更新</button>
 			</td>
 		</tr>
 	</table>
@@ -287,7 +289,7 @@ while ($row = $result->fetch_assoc()) {
 </div>
 
 <div id="view">
-	<div id="closeview">&times;</div>
+	<div id="closeview" class="close">✕</div>
 		<h3>カードプレビュー</h3>
 		<div id="result"></div>
 			<p>
@@ -297,6 +299,17 @@ while ($row = $result->fetch_assoc()) {
 				<span>※背景画像としてアップロードされます。</span>
 			</p>
 	<button id="dataupload">保存して次へ</button>
+</div>
+
+
+<div id="makebg">
+	<div id="cardform">
+		<div class="close">✕</div>
+		<p>出展カード背景画像</p>
+		<label for="fileselect" class="btn">背景画像の画像を選択</label>
+		<input type="file" id="fileselect" name="cardimage" />
+		<button id="imageupload" name="submit" class="button" value="">背景画像のアップロード</button>
+	</div>
 </div>
 
 <script src="../common/js/jquery.js"></script>
@@ -531,10 +544,33 @@ $(function(){
 	    $('#view').removeClass();
 	});
 
+	$('#backgroundupload').on('click',function(){
 
+	})
+
+	$('#backgroundupload').on('click',function(){
+		$('#makebg').addClass('active');
+	})
+
+	$('#cardform .close').on('click',function(){
+		$('#makebg').removeClass('active');
+	});
+
+$('#fileselect').on('change', function(e) {
+    const file = e.target.files[0];
+    if (file && file.type.match('image.*')) {
+        const reader = new FileReader();
+        reader.onload = function(event) {
+            $('#mycard').css('background-image', 'url(' + event.target.result + ')');
+            $('#fileselect').val('');
+            $('#makebg').removeClass('active');
+        };
+        reader.readAsDataURL(file);
+    }
+});	
 	// Check card view
 	function cardReset(){
-		$('#mycard').css({'background-image': 'url("/expo/<?= $vid ?>/<?= $cid ?>.jpg")'});
+		$('#mycard').css({'background-image': 'url("../que/<?= $vid ?>/<?= $cid ?>.webp")'});
 		$('#logoimage,#companyname').addClass('hidden');
 	}
 

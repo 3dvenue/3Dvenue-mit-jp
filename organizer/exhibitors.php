@@ -124,7 +124,7 @@ if (isset($_GET['vid'])) {
 </div>
 </main>
 <div id="web">
-<div class="close">&times;</div>
+<div class="close">✕</div>
 <iframe src="about:blank"></iframe>
 </div>
 <?php include_once 'footer.php'; ?>

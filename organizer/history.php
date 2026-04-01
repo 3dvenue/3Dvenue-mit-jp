@@ -56,13 +56,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $end = $row['end'];
             $organizer = $row['organizer'];
             $public = "OK";
-            $imagePath = '../expo/img/bana'.$id.'.png';
+
+            $imagePath = '../que/'.$id.'/bana.webp';
             if (!file_exists($imagePath)) {
-            $public = "NG";
-            $imagePath = '../expo/img/nobana.png';
+                $public = "NG";
+                $imagePath = '../que/nobana.webp';
             }
 
-            $lines = file('../expo/'.$id.'/access.log');
+            $logpath = '../que/'.$id.'/access.log';
+            if (!file_exists($logpath)) {
+                touch($logpath);     // 存在を確定させる
+                chmod($logpath, 0666); // 読み書き権限を整える
+            }
+
+            $lines = file('../que/'.$id.'/access.log');
 
     ?>
     <figure data-id="<?=$id?>">
@@ -77,12 +84,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </div>
 </main>
 <div id="analyze">
-    <div id="close">&times;</div>
+    <div id="close">✕</div>
     <iframe id="iframe" src="analyze.php"></iframe>
 </div>
 <?php include_once 'footer.php'; ?>
 <script src="../common/js/jquery.js"></script>
-
 <script type="text/javascript">
     $(function(){
 

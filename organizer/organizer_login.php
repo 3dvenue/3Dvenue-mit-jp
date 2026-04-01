@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <header>
     <div class="inner">
         <div id="logo">
-            <img src="../img/logo.png" alt="3DVenue" />
+            <img src="../img/logo.webp" alt="3DVenue" />
         </div>
     </div>
 </header>

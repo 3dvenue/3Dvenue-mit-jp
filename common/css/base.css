@@ -35,3 +35,18 @@ body *{
 	border-radius: 7px;
 	cursor: pointer;
 }
+
+.close{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	line-height: 1.0;
+	border:1px solid #333;
+	background:#FFF;
+	color:#333;
+	font-weight: 500;
+	font-size:20px;
+	width:30px;
+	height:30px;
+	cursor: pointer;
+}

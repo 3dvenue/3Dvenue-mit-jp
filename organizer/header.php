@@ -1,7 +1,7 @@
 <header>
 	<div class="inner">
 		<div id="logo">
-			<img src="../img/logo.png" alt="3DVenue" />
+			<img src="../img/logo.webp" alt="3DVenue" />
 		</div>
 		<div id="companyname"><?=$company_name?> 主催者</div>
 	</div>

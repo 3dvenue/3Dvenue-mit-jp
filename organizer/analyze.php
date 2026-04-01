@@ -11,8 +11,8 @@ include_once "auth.php";
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
   $id = $_GET['i'];
 
-$venueLogPath = '../expo/'.$id.'/venue.log';
-$accessLogPath = '../expo/'.$id.'/access.log';
+$venueLogPath = '../que/'.$id.'/venue.log';
+$accessLogPath = '../que/'.$id.'/access.log';
 
 $venue = [];
 $access = [];

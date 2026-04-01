@@ -98,7 +98,7 @@ while ($row = $result->fetch_assoc()) {
 </main>
 
 <div id="form">
-    <div class="close">&times;</div>
+    <div class="close">✕</div>
     <form method="POST" class="form">
         <label><span>タイトル</span><input type="text" id="title" name="title" placeholder="タイトルを入力してください" required></label>
         <label><span>内容</span><textarea id="content" name="content" placeholder="本文を入力してください" required></textarea></label>

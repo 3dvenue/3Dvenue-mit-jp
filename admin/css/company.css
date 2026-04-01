@@ -13,6 +13,18 @@
 	position: relative;
 }
 
+#companies h3 a{
+	margin-left:100px;
+	font-size:14px;
+	opacity:0.0;
+	pointer-events: none;
+}
+
+#companies.link h3 a{
+	opacity:1;
+	pointer-events: auto;
+}
+
 #companies #add{
 	position: absolute;
 	justify-content: center;

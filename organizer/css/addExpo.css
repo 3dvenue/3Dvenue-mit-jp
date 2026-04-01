@@ -120,15 +120,6 @@ main section h2{
 	position:absolute;
 	top:0;
 	right:20px;
-	color:#000;
-	width:40px;
-	height:40px;
-	display: grid;
-	place-items: center;
-	background: #FFF;
-	font-size:30px;
-	font-weight:700;
-	line-height: 1.0;
 }
 
 #banaArea #result{
@@ -141,7 +132,6 @@ main section h2{
 	width:100%;
 	height:auto;
 }
-
 
 canvas{
 	width:100%;

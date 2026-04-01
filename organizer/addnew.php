@@ -24,7 +24,7 @@ $stmt->bind_param('sssssi',$name ,$subtitle ,$description ,$start ,$end ,$oid);
 if ($stmt->execute()) {
     $newId = $conn->insert_id;
 
-    $dirPath = '../expo/' . $newId;
+    $dirPath = '../que/' . $newId;
     if (!is_dir($dirPath)) {
         mkdir($dirPath, 0777, true);
         chmod($dirPath, 0777);

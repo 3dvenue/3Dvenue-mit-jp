@@ -43,7 +43,7 @@ main #expo{
 main #expo .expo{
 	background:#FFF;
 	position:relative;
-	padding:50px 20px 5px;
+	padding:40px 20px 10px;
 	border-radius: 10px;
 	box-shadow: 0 0 10px #0001;
 	max-width:880px;
@@ -53,16 +53,18 @@ main #expo .expo{
 main #expo .expo .expomemo{
 	display: flex;
 	gap:20px;
-	padding:10px 0;
+	padding:0;
 }
 
 main #expo .expo .expomemo figure{
 	display:block;
-	width:150px;
+	width:180px;
+	margin:20px 0;
 }
 
 main #expo .expo .expomemo figure img{
 	width:100%;
+	cursor: pointer;
 }
 
 main #expo .expo label{
@@ -177,3 +179,146 @@ main #expo .expo .public .exhibitors{
 	font-size:20px;
 }
 
+
+/*  expoframe
+------------------------------------*/
+#expoframe{
+	position: fixed;
+	padding-top:60px;
+	top:0;
+	left:0;
+	width:100%;
+	height:100vh;
+	z-index:100;
+	transform: scale(0.0);
+	pointer-events: none;
+}
+
+#expoframe .after {
+    display: block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    max-width: 640px;
+    height: 360px;
+    margin: 0 auto;
+    opacity: 1.0;
+}
+
+#expoframe .close{
+	position: absolute;
+	top:0;
+	right:20px;
+	z-index:1000;
+}
+
+#expoframe.active{
+	transform: scale(1.0);
+	pointer-events: auto;
+}
+
+#expoframe #categories{
+	position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    background: #375187;
+    backdrop-filter: blur(6px);
+}
+
+#categories ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#categories ul li {
+    padding: 10px 20px;
+    color: #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.2s;
+    pointer-events: auto;
+    font-size: 14px;
+    width: max-width;
+}
+
+#expoframe #floor{
+	position: absolute;
+	bottom:0;
+	left:0;
+	width:100%;
+	height:45%;
+	background:#000;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	gap: 40px;
+	color:#FFF;
+}
+
+#expoframe #floor #savebtn{
+	position: absolute;
+	top:calc(25% - 20px);
+	left:0;
+	width:100%;
+	text-align: center;
+}
+
+#expoframe #floor #savebtn .btn{
+	display: inline-block;
+	transform: scaleX(0.0);
+	font-size:14px;
+	opacity:0;
+}
+
+#expoframe #floor #savebtn.active .btn{
+	opacity:1;
+	transform: scaleX(1.0);
+}
+
+#bgcolor{
+	display: flex;
+	gap:10px;
+}
+
+#background{
+	display: none;
+}
+
+#bgfile{
+}
+
+#bgfile label{
+	border:2px solid #ccc;
+	border-radius: 3px;
+	padding:2px 15px;
+	border-color:#ccc #999 #999 #ccc;
+	display: block;
+	cursor: pointer;
+}
+
+#bgfile img{
+	height:18px;
+	width:auto;
+}
+
+#trash{
+	padding:2px 15px;
+	display: block;
+	cursor: pointer;
+	opacity: 0;
+}
+
+#trash.active{
+	opacity: 1.0;
+}

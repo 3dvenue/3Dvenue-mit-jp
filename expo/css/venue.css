@@ -18,21 +18,20 @@ body, html {
     height: 100%;
     overflow: hidden;
     background:var(--bodybackground);
+    padding-top:60px;
 }
 
-body:after{
-    content:"";
+body .after {
     display: block;
-    background-image:url(../../img/mtfuji.png);
-    background-size:contain;
-    background-repeat:no-repeat;
-    background-position:center 13vh;
-    width:100%;
-    max-width:680px;
-    height:500px;
-    margin:0 auto;
-    opacity:1.0;
-}
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    max-width: 640px;
+    height: 360px;
+    margin: 0 auto;
+    opacity: 1.0;
+    }
 
 #bg-canvas {
     position: fixed;
@@ -56,6 +55,7 @@ body:after{
     z-index:10;
     background:#375187;
     backdrop-filter: blur(6px);
+    height:60px;
 }
 
 
@@ -77,7 +77,7 @@ body:after{
     transition: 0.2s;
     pointer-events: auto;
     font-size:14px;
-    width:max-width;
+
 }
 
 #categories ul li.select{
@@ -92,7 +92,6 @@ body:after{
 }
 
 #categories ul li:hover {
-    /*transform: translateY(-4px);*/
     box-shadow: 3px 3px 5px #0006;
 }
 
@@ -192,7 +191,6 @@ body:after{
     height:100%;
     position:fixed;
     z-index:10000;
-    /*background:linear-gradient(#FFF,#CCC);*/
     background: var(--bodybackground);
     backdrop-filter: blur(6px);
     padding:0;
@@ -216,7 +214,6 @@ body:after{
 }
 
 #boothheader{
-    /*background:#336;*/
     background:var(--headerbackground);
     height:80px;
     padding:20px;
@@ -246,13 +243,6 @@ body:after{
     position: absolute;
     top:10px;
     right:10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width:30px;
-    height:30px;
-    font-size:20px;
-    font-weight:700;
     border:1px solid #333;
     background:#0009;
     color:#FFF;

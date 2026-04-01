@@ -204,6 +204,63 @@ main #venue{
 	background:#f0f0f0;
 }
 
+#about .about{
+    width:100%;
+    max-width:880px;
+    margin:0 auto;
+    text-align: left;
+    font-size:20px;
+}
+
+/* elist
+------------------------------------*/
+main #elist{
+	width:100%;
+}
+
+main #elist details{
+	width:100%;
+	margin-bottom:20px;
+}
+
+main #elist details summary{
+	text-align:left;
+	font-size:18px;
+	font-weight:700;
+	background:#256EC2;
+	color:#FFF;
+	width:100%;
+	padding:5px 1em;
+	margin-bottom:5px;
+	border-radius: 5px;
+}
+
+main #elist details p.elist{
+  display: grid;
+  gap: clamp(1px, 10vw, 5px);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+main #elist details p.elist span{
+	display:block;
+	width:100%;
+	font-size: 16px;
+	padding:5px 10px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-break: break-all;
+	text-align: left;
+}
+
+main #elist details p.elist span:nth-child(odd){
+	border:1px solid #F0F0F0;
+}
+
+main #elist details p.elist span:nth-child(even){
+	background:#F0F0F0;	
+}
+
 /*  footer
 --------------------------------------- */
 

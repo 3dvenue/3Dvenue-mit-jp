@@ -20,28 +20,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     switch ($name) {
 
         case 'name':
-            $text = $_POST['text'];
+        $text = mysqli_real_escape_string($conn, $_POST['text'] ?? '');
             break; 
 
         case 'subtitle': 
-            $text = $_POST['text'];
+        $text = mysqli_real_escape_string($conn, $_POST['text'] ?? '');
             break; 
 
         case 'period': 
-            $start = $_POST['start'];
-            $end = $_POST['end'];
+            $start = mysqli_real_escape_string($conn, $_POST['start'] ?? '');
+            $end   = mysqli_real_escape_string($conn, $_POST['end'] ?? '');
             break; 
 
         case 'organizers': 
-            $text = $_POST['text'];
+        $text = mysqli_real_escape_string($conn, $_POST['text'] ?? '');
             break; 
 
         case 'description': 
-            $text = $_POST['textarea'];
+        $text = mysqli_real_escape_string($conn, $_POST['textarea'] ?? '');
             break; 
 
         case 'benefit': 
-            $text = $_POST['textarea'];
+        $text = mysqli_real_escape_string($conn, $_POST['textarea'] ?? '');
             break;
     }
 
@@ -106,7 +106,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         exit;
     }
 
-    $id = $_GET['id'];
+    $id = (int)($_GET['id'] ?? 0);
     $sql = "SELECT * FROM venue WHERE id = '$id'";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
@@ -119,7 +119,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         exit;
     }
 
-        $bgstyle = "";
         $name = $row['name'];
         $subtitle = $row['subtitle'];
         $description = $row['description'];
@@ -145,8 +144,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         $h2text = $row['h2text'];
         $organizers = $row['organizers'];
 
-        if(!$background == ''){
-            $bgstyle = 'style="background:url(../expo/img/'.$id.'.'.$background.'?t='.time().')"';
+        $toppath = '../que/'.$id.'/top.webp';
+        $bgstyle = "";
+        if (file_exists($toppath)) {
+            $bgstyle = 'style="background:url(../que/'.$id.'/top.webp?t='.time().')"';
         }
 
     }else{
@@ -207,7 +208,7 @@ main p{
 </head>
 <body>
 <div id="banaArea">
-    <div class="close">&times;</div>
+    <div class="close">✕</div>
     <div id="result"></div>
     <button id="save" class="btn">保存する</button>
 </div>
@@ -300,7 +301,7 @@ main p{
 <div id="editor">
     <div id="form">
         <h3>編集</h3>
-        <div class="close">&times;</div>
+        <div class="close">✕</div>
         <form method="POST" id="textedit">
             <input type="hidden" name="id" id="id" value="<?=$id?>" />
             <input type="hidden" name="name" id="name" value="" />
@@ -342,7 +343,7 @@ main p{
 
 
 <div id="colorbar">
-<div class="close">&times;</div>
+<div class="close">✕</div>
 <form method="POST">
 
 <div>
