@@ -16,7 +16,6 @@
 			<ul>
 				<li><a href="./about.php">概要</a></li>
 				<li><a href="./expo.php">展示会</a></li>
-				<li><a href="./download.php">ダウンロード</a></li>
 				<li><a href="./login.php">ログイン</a></li>
 			</ul>
 		</nav>
